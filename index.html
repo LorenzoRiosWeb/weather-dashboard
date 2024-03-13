@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Weather Dashboard</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="/assets/styles.css" />
+        <!-- Font Links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Belleza&family=Darker+Grotesque:wght@300..900&display=swap" rel="stylesheet">
+    </head>
+    <!-- Whenever the page is loaded, it runs a function that updates the html if the local storage is empty. -->
+    <body onload="checkLocalStorage()"> 
+        <header>
+            <h1>Weather Dashboard</h1>
+        </header>
+        <main>
+            <div class="container">
+                <!-- Search box and search history card -->
+                <div id="search-col-div" class="row justify-content-start text-center">
+                    <div id="search-col" class="col col-md-3 card">
+                        <!-- Search box -->
+                        <div class="mb-3">
+                            <label for="city-form" class="form-label">Search for a City:</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="city-form"
+                                id="search-input"
+                            />
+                        </div>
+                        <!-- Submit button -->
+                        <button
+                            type="submit"
+                            class="btn btn-primary"
+                            id="submit-button"
+                        >
+                            Submit
+                        </button>
+                        <hr>
+                        <!-- Search history -->
+                        <div class="list-group" id="list-group"></div>
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            id="clear-history"
+                        >
+                            Clear History
+                        </button>
+                    </div>
+                </div>
+                <!-- Present day forecast card -->
+                <div class="card weather-card" id="present-card">
+                    <div class="card-body">
+                        <h4 class="card-title" id="present-city"></h4>
+                        <p class="card-text" id="present-weather">
+                        <p class="card-text" id="present-temp"></p>
+                        <p class="card-text" id="present-wind"></p>
+                        <p class="card-text" id="present-humidity"></p>
+                    </div>
+                </div>
+                <!-- Five day forecast cards -->
+                <div class="card-group weather-card" id="forecast-cards">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" id="1date"></h4>
+                            <img id="1icon">
+                            <p class="card-text" id="1temp"></p>
+                            <p class="card-text" id="1wind"></p>
+                            <p class="card-text" id="1humidity"></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" id="2date"></h4>
+                            <img id="2icon">
+                            <p class="card-text" id="2temp"></p>
+                            <p class="card-text" id="2wind"></p>
+                            <p class="card-text" id="2humidity"></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" id="3date"></h4>
+                            <img id="3icon">
+                            <p class="card-text" id="3temp"></p>
+                            <p class="card-text" id="3wind"></p>
+                            <p class="card-text" id="3humidity"></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" id="4date"></h4>
+                            <img id="4icon">
+                            <p class="card-text" id="4temp"></p>
+                            <p class="card-text" id="4wind"></p>
+                            <p class="card-text" id="4humidity"></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title" id="5date"></h4>
+                            <img id="5icon">
+                            <p class="card-text" id="5temp"></p>
+                            <p class="card-text" id="5wind"></p>
+                            <p class="card-text" id="5humidity"></p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </main>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+        <!-- Jquery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- My Javascript -->
+        <script src="/assets/script.js"></script>
+    </body>
+</html>
